@@ -15,9 +15,9 @@ QTR_ms = int(1000/BPS)
 
 def update_leds(turn_on = [], turn_off = []):
     for led in turn_on:
-        led.value(1)
+        led.on()
     for led in turn_off:
-        led.value(0)
+        led.off()
 
 def all_on():
     update_leds([R1, R2, R3, G1], [])
@@ -31,22 +31,22 @@ def sleep_test(bpm):
     qtr = int(1000/bps)
 
     for i in range(0,4):
-        R1.value(1)
+        R1.on()
         sleep_ms(qtr)
-        R2.value(1)
+        R2.on()
         sleep_ms(qtr)
-        R3.value(1)
+        R3.on()
         sleep_ms(qtr)
-        G1.value(1)
+        G1.on()
         sleep_ms(qtr)
 
-        R1.value(0)
+        R1.off()
         sleep_ms(qtr)
-        R2.value(0)
+        R2.off()
         sleep_ms(qtr)
-        R3.value(0)
+        R3.off()
         sleep_ms(qtr)
-        G1.value(0)
+        G1.off()
         sleep_ms(qtr)
 
 def playback(commands=[]):
